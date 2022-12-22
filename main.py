@@ -7,7 +7,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
 dataBase = client["neurolabDB"]
 
 # Collection  Name
-collection = dataBase['Products']
+collection = dataBase['Products'] 
 
 # Sample data
 d = {'companyName': 'iNeuron',
