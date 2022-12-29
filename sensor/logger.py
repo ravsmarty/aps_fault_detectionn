@@ -14,7 +14,7 @@ os.makedirs(LOG_FILE_DIR,exist_ok=True)
 
 #log file path
 
-LOG_FILE_PATH = os.path.join(LOG_FILE_DIR,LOG_FILE_NAME)
+LOG_FILE_PATH = os.path.join(LOG_FILE_DIR,LOG_FILE_NAME) 
 
 logging.basicConfig(
     filename=LOG_FILE_PATH,
