@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-artifacts
+artifact
 # C extensions
 *.so
 prediction
@@ -133,4 +133,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-artifact
