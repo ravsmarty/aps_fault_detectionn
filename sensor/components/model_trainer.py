@@ -8,12 +8,11 @@ from sensor import utils
 from sklearn.metrics import f1_score
 
 
-
 class ModelTrainer:
 
 
     def __init__(self,model_trainer_config:config_entity.ModelTrainerConfig,
-                  data_transformation_artifact:artifact_entity.DataTransformationArtifact
+                data_transformation_artifact:artifact_entity.DataTransformationArtifact
                 ):
         try:
             logging.info(f"{'>>'*20} Model Trainer {'<<'*20}")
@@ -76,7 +75,7 @@ class ModelTrainer:
                 raise Exception(f"Train and test score diff: {diff} is more than overfitting threshold {self.model_trainer_config.overfitting_threshold}")
 
             #save the trained model
-            logging.info(f"Saving model object")
+            logging.info(f"Saving mode object")
             utils.save_object(file_path=self.model_trainer_config.model_path, obj=model)
 
             #prepare artifact
@@ -84,7 +83,6 @@ class ModelTrainer:
             model_trainer_artifact  = artifact_entity.ModelTrainerArtifact(model_path=self.model_trainer_config.model_path, 
             f1_train_score=f1_train_score, f1_test_score=f1_test_score)
             logging.info(f"Model trainer artifact: {model_trainer_artifact}")
-            return model_trainer_artifact 
+            return model_trainer_artifact
         except Exception as e:
             raise SensorException(e, sys)
-

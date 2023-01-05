@@ -11,21 +11,24 @@ class DataIngestionArtifact:
 class DataValidationArtifact:
     report_file_path:str
 
-@dataclass    
+@dataclass
 class DataTransformationArtifact:
-    transform_object_path:str 
+    transform_object_path:str
     transformed_train_path:str
     transformed_test_path:str
     target_encoder_path:str
     
 
-@dataclass  
+@dataclass
 class ModelTrainerArtifact:
-     model_path:str 
-     f1_train_score:float 
-     f1_test_score:float
+    model_path:str 
+    f1_train_score:float 
+    f1_test_score:float
 
 
-
-class ModelEvaluationArifact:...
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted:bool
+    improved_accuracy:float
+    
 class ModelPusherArifact:...
