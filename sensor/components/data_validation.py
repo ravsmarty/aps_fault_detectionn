@@ -52,7 +52,7 @@ class DataValidation:
             return df
         except Exception as e:
             raise SensorException(e, sys)
-
+#
     def is_required_columns_exists(self,base_df:pd.DataFrame,current_df:pd.DataFrame,report_key_name:str)->bool:
         try:
 
